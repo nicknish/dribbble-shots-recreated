@@ -1,0 +1,322 @@
+//------- Many, many fonts -------//
+
+// Global
+@import url(https://fonts.googleapis.com/css?family=Lato&subset=latin);
+@import url(https://fonts.googleapis.com/css?family=Special+Elite&text=123456789DECdec);
+
+// Blue Tag
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display&text=SANTAsanta);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&text=iadIAD);
+@import url(https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&subset=latin);
+
+// Brown Tag
+@import url(https://fonts.googleapis.com/css?family=Cabin+Condensed&text=DSHdsh);
+
+//------- Variables -------//
+$background: #E5F1F1;
+$tag-color--blue: #F5F4ED;
+$tag-color--brown: #272321;
+$tag-color--lightbrown: #CCBDAB;
+$santa-font--blue: "Playfair Display", serif;
+$destination-font--blue: "Yanone Kaffeesatz", sans-serif;
+$destination-font--brown: "Cabin Condensed", sans-serif;
+$code-font: "Special Elite", monospace;
+$cursive-font: "Bilbo Swash Caps", cursive;
+
+//------- Global Page -------//
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body,
+.wrapper,
+.tags {
+    min-height: 100%;
+    min-height: 100vh;
+}
+body {
+    font-family: "Lato", sans-serif;
+}
+
+//------- Helpers -------//
+.u-codeFont {
+    font-family: $code-font, monospace;
+}
+.u-cursiveFont {
+    font-family: $cursive-font, cursive;
+}
+.u-gridCol {
+    flex-flow: wrap column;
+}
+
+// Grid
+.u-grid {
+    display: flex;
+}
+.u-gridItem {
+    flex: 1;
+}
+.u-gridItem--fit {
+    flex: 0 0 100%;
+}
+
+//------- Page Styles -------//
+.wrapper {
+    background: url(), $background;
+}
+.tags {
+    margin: 0 auto;
+    max-width: 875px;
+    align-items: center;
+    flex-flow: wrap row;
+    justify-content: center;
+}
+.tag {
+    height: 490px;
+    max-height: 100%;
+    max-width: 280px;
+    margin: 10px 50px 50px;
+    box-shadow: 0 13px 5px -8px rgba(0,0,0,.3);
+    overflow: hidden;
+    transition: all .5s ease;
+}
+.tag--rounded {
+    border-radius: 30px;
+}
+.tag-hole {
+    position: relative;
+    display: block;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
+    
+    &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        box-shadow: inset 2px 3.5px 3px 0 rgba(0,0,0,0.5);
+        background: $background;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+.tag--blue {
+    
+    .tag-head {
+        min-height: 25.4%;
+        padding: 15px 25px 0 20px;
+        background: $tag-color--blue;
+    }
+    .tag-hole {
+        position: absolute;
+    }
+    .tag-info {
+        padding: 5px 0 0;
+        text-align: right;
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+    .tag-infoIcon {
+        max-width: 45px;
+    }
+    .tag-headFrom {
+        line-height: 1.2;
+        font-family: $santa-font--blue;
+        letter-spacing: 4px;
+        color: #CD1630;
+        transform: scale(1,.8);
+    }
+    .tag-body {
+        position: relative;
+        height: 75%;
+        padding: 25px;
+        background: #B1CDC8;
+    }
+    .tag-bodyHeader {
+        margin-bottom: 30px;
+        font-size: 17px;
+        letter-spacing: 1px;
+    }
+    .tag-bodyToWrapper {
+        position: relative;
+        max-width: 235px;
+        margin: 0 auto 20px;
+        text-align: center;
+        overflow: hidden;
+    }
+    .tag-bodyDestinationCode {
+        position: relative;
+        margin-bottom: 42px;
+        line-height: .7;
+        font-size: 167px;
+        color: #23201E;
+        letter-spacing: 2px;
+        font-family: $destination-font--blue;
+    }
+    .tag-bodyTo {
+        width: 100%;
+        padding: 10px;
+        color: #218EA0;
+        background: $tag-color--blue;
+        font-size: 28px;
+    }
+    .tag-bodyDestinationCity {
+        font-size: 17px;
+        letter-spacing: 1px;
+    }
+    .tag-bodyCode {
+        position: absolute;
+        right: 15px;
+        bottom: 20px;
+        font-size: 21px;
+        color: rgba(0,0,0,.6);
+        letter-spacing: 2px;
+        transform: rotate(-9deg);
+    }
+}
+.tag--brown {
+    
+    .tag-head {
+        height: 17.5%;
+        padding: 12.5px;
+        border: 1px solid #191715;
+        background: #272321;
+        align-items: center;
+        justify-content: center;
+    }
+    .tag-headItem {
+        padding: 0 5px;
+        text-align: center;
+    }
+    .tag-randomCode {
+        display: inline-block;
+        padding: 5px 10px;
+        border: 2px solid $tag-color--lightbrown;
+        text-transform: uppercase;
+        color: $tag-color--lightbrown;
+        letter-spacing: 2px;
+        border-radius: 2px;
+    }
+    .tag-hole {
+        margin: 0 auto;
+        background: #464136;
+    }
+    .tag-arrow {
+        max-width: 40px;
+    }
+    .tag-body {
+        position: relative;
+        height: 82.5%;
+        background: #C4B3A4;
+    }
+    .tag-bodyInfo {
+        flex: 0.78;
+        border-bottom: 2px solid #514A44;
+        
+        &:first-of-type {
+            flex: 2.1;
+        }
+        &:nth-of-type(4) {
+            flex: 1;
+            border-bottom: 0;
+        }
+    }
+    .tag-bodyInfoHeader {
+        padding: 5px 0 0 10px;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    .tag-bodyInfoBody {
+        font-size: 28px;
+        text-align: center;
+    }
+    .tag-bodyInfoBody--destination {
+        font-family: $destination-font--brown;
+        font-size: 94px;
+        line-height: 1.5;
+        font-weight: bold;
+        color: $tag-color--brown;
+        letter-spacing: 8px;
+    }
+    .tag-bodyInfoBody--date {
+        position: absolute;
+        right: 40px;
+        padding-top: 10px;
+        font-size: 20px;
+        text-transform: uppercase;
+        transform: rotate(-1.5deg);
+        color: rgba(0,0,0,.5);
+        letter-spacing: 1px;
+    }
+    .tag-bodyFooter {
+        position: absolute;
+        bottom: 0;
+        height: 25px;
+        width: 100%;
+        background: repeating-linear-gradient(135deg, $tag-color--brown 25%, $tag-color--brown 50%, transparent 50%, transparent 75%);
+        background-size: 43px 49px;
+        background-position: -19px 0;
+    }
+}
+
+//------- Media Queries -------//
+@media (min-width: 580px) {
+    .tag {
+        height: 580px;
+        max-width: 340px;
+    }
+    .tag--blue {
+        
+        .tag-info {
+            font-size: 36px;
+        }
+        .tag-infoIcon {
+            max-width: 55px;
+        }
+        .tag-bodyHeader {
+            font-size: 20px;
+        }
+        .tag-bodyToWrapper {
+            margin: 0 auto 35px;
+        }
+        .tag-bodyDestinationCode {
+            left: -9px;
+            font-size: 247px;
+        }
+        .tag-bodyDestinationCity {
+            font-size: 20.5px;
+        }
+        .tag-bodyCode {
+            right: 30px;
+            bottom: 15px;
+            font-size: 23px;
+        }
+    }
+    .tag--brown {
+     
+        .tag-bodyInfoHeader {
+            font-size: 16px;
+        }
+        .tag-bodyInfoBody--message,
+        .tag-bodyInfoBody--from {
+            font-size: 32px;
+        }
+        .tag-bodyInfoBody--destination {
+            font-size: 144px;
+            line-height: 1.1;
+        }
+    }
+}
+@media (min-width: 800px) {
+    .tag.u-gridItem--fit {
+        flex: 1;
+    }
+}
