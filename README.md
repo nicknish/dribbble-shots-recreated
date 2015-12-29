@@ -1,7 +1,9 @@
 # [Dribbble Shots Recreated](https://dribbble.com/nicknish/buckets/337540-Dribbble-Shots-Recreated)
 Dribbble Shots Recreated is a collection of Dribbble shots recreated as a homage to the original designers. This remains publicly available and open source for educational use (and fun 😉).
 
-To see the collection, check out [https://dribbble.com/nicknish/buckets/337540-Dribbble-Shots-Recreated](https://dribbble.com/nicknish/buckets/337540-Dribbble-Shots-Recreated)!
+[The Dribbble collection](https://dribbble.com/nicknish/buckets/337540-Dribbble-Shots-Recreated)!
+
+Or [the CodePen collection](http://codepen.io/collection/DwkkWW/)!
 
 ## List of Shots
 * 100 Days UI
