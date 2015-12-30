@@ -17,6 +17,28 @@ $lightgray: rgba(255,255,255,.3);
 
 /* Helpers 
 ====================== */
+.u-xs-hideInlineBlock,
+.u-xs-hideBlock {
+    display: none !important;
+}
+.u-xs-showBlock {
+    display: block !important;
+}
+.u-xs-showInlineBlock {
+    display: inline-block !important;
+}
+@media (min-width: 768px) {
+    .u-xs-showBlock,
+    .u-xs-showInlineBlock {
+        display: none !important;
+    }
+    .u-xs-hideBlock {
+        display: block !important;
+    }
+    .u-xs-hideInlineBlock {
+        display: inline-block !important;
+    }
+}
 .u-btn {
     width: 25px;
     height: 25px;
@@ -145,7 +167,7 @@ body,
     margin-bottom: 20px;
 }
 .session-time {
-    padding: 20px 10px 35px 20px;
+    padding: 20px 20px 35px;
     background: $session-black;
     box-shadow: 0 40px 84px 0 rgba(0,0,0,.8);
 }
@@ -159,8 +181,9 @@ body,
     font-size: 13px;
 }
 .session-timeHeaderCurrent {
-    float: right;
-    padding-top: 5px;
+    display: inline-block;
+    text-align: left;
+    margin-left: 5px;
     letter-spacing: .25px;
 }
 .session-timeCounter {
@@ -170,14 +193,14 @@ body,
 }
 .session-timeWrapper {
     position: relative;
-    flex: 1.3;
+    flex: 1.1;
     font-size: 42px;
     line-height: 1;
     
     &:after {
         position: absolute;
         top: 15%;
-        right: 25%;
+        right: 15%;
         content: ":";
         vertical-align: middle;
         font-size: 30px;
@@ -213,8 +236,6 @@ body,
 .session-timeType {
     font-size: 12px;
     letter-spacing: .35px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 /* Media Queries */
@@ -247,8 +268,13 @@ body,
         padding: 38px 30px 35px 60px;
         border-radius: 8px;
     }
+    .session-timeHeader,
+    .session-timeType {
+        font-size: 14px;
+    }
     .session-timeHeaderCurrent {
-        padding: 0;
+        float: right;
+        margin: 0 22.5px 0 0;
     }
     .session-timeCounter {
         max-width: 100%;
@@ -273,13 +299,6 @@ body,
                 right: 26%;
             }
         }
-    }
-    .session-timeHeader,
-    .session-timeType {
-        font-size: 14px;
-    }
-    .session-timeHeaderCurrent {
-        margin-right: 22.5px;
     }
     .session-timeType {
         padding-left: 4px;
